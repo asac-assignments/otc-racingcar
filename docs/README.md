@@ -51,3 +51,22 @@ jun : -----
 
 최종 우승자 : pobi, jun
 ```
+
+## 기능 설계
+
+### Car
+
+#### Car-Model
+* 변수: carName, carLocation, carIsWin
+* `updateLocation`: carLocation + 1 저장
+* `isWinCheck`: carIsWin에 true/false 저장
+
+#### Car-View
+* `printLocation`: 콘솔에 지속적인 출력 - carName : carLocation * '-'
+* `printWin`: 경주 끝날시 결과 출력
+
+#### Car-Controller
+* `create`: Constructor를 통한 이름: ${사용자입력}, 위치: 0
+* `read`: model의 데이터를 view에 전달
+* `callUpdateLocation`: 난수 생성 후 업데이트 조건 만족시 model의 update 불러오기
+* `callIsWinCheck`: model 위치를 가져와 승리 판별 후, 승리 조건 만족시 model-isWinCheck 불러오기
