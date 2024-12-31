@@ -11,6 +11,22 @@ class RacingCar {
 	printMovDistance() {
 		Console.print(this.#name + " : " + this.#mov_distance);
 	}
+
+	move() {
+		const nums = [];
+		for (let i = 0; i < 10; i++) {
+			nums.push(i);
+		}
+		const random_num = MissionUtils.Random.pickNumberInList(nums);
+		if (random_num >= 4) {
+			this.#mov_distance += "-";
+		}
+	}
+
+	distance() {
+		return this.#mov_distance.length;
+	}
+
 }
 
 // console.log(MissionUtils.Random.pickNumberInList([1, 9]));
