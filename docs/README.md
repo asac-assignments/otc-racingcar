@@ -66,11 +66,11 @@ jun : -----
 * `printWin`: 결과 출력
 
 #### Car-Controller
-* `create`: User-Controller의 `seperateName` 반환값 이용, Constructor를 통한 이름: ${사용자입력}, 위치: 0
-* `read`: model의 데이터를 view에 전달 및 출력 함수 실행
+* `create`: User-Controller의 `seperateName` 반환값 이용, Car 객체 생성 및 push
+* `read`: model의 데이터를 view에 전달
 * `callUpdateLocation`: 난수 생성 후 업데이트 조건 만족시 model의 updateLocation 불러오기
 * `callIsWinCheck`: model 위치를 가져와 승리 판별 후, 승리 조건 만족시 model-isWinCheck 불러오기
-* `endOfGame`: 현재 턴의 횟수를 확인 후, 끝났으면 View의 carIsWin이 true인 것들을 가져와서 printWin 실행
+* `endOfGame`: 현재 턴의 횟수를 확인 후, 끝났으면 model의 carIsWin이 true인 것들을 가져와서 View에 전달
 
 ### User
 
@@ -90,4 +90,4 @@ jun : -----
 * `nameInputValidate`: 잘못되지 않음을 구분(success: true/false, errorcode: 100/101)
 * `commaValidate`: 쉼표로 구분이 가능한지(success: true/false, errorcode: 200/301)
 * `nameValidate`: 이름이 5글자 이하인지(success: true/false, errorcode: 300/301)
-* `errorCheck`: 어떤 에러인지 확인하고 value 반환
+* `errorCheck`: 어떤 에러인지 확인하고 최종적 true 및 메시지 반환
