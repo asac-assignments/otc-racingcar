@@ -7,7 +7,7 @@ function nameInputValidate(inputName) {
 
 //쉼표로 구분이 가능한지 확인
 function commaValidate(inputName) {
-    return inputName.includes(",")
+    return inputName.includes(",") && !inputName.includes(" ")
         ? { success: true, errorCode: 200 }
         : { success: false, errorCode: 201 };
 }
