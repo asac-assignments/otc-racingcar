@@ -1,13 +1,13 @@
-//문자열인지 확인
+//문자열인지 확인 & 문자열 길이 확인
 function nameInputValidate(inputName) {
-    return typeof inputName === "string"
+    return typeof inputName === "string" && inputName.length != 0
         ? { success: true, errorCode: 100 }
         : { success: false, errorCode: 101 };
 }
 
-//쉼표로 구분이 가능한지 확인
+//쉼표로 구분이 가능한지 확인 && 띄어쓰기 존재하는지 확인
 function commaValidate(inputName) {
-    return inputName.includes(",") && !inputName.includes(" ")
+    return (!inputName.includes(",") || (inputName.includes(",") && !inputName.includes(", ")))
         ? { success: true, errorCode: 200 }
         : { success: false, errorCode: 201 };
 }
