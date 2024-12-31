@@ -64,17 +64,29 @@ jun : -----
 #### Car-View
 * `printLocation`: 출력 - 'carName : carLocation * '-' '
 * `printWin`: 결과 출력
-* `printError`: 에러 출력
 
 #### Car-Controller
-* `create`: Constructor를 통한 이름: ${사용자입력}, 위치: 0
+* `create`: User-Controller의 `seperateName` 반환값 이용, Constructor를 통한 이름: ${사용자입력}, 위치: 0
 * `read`: model의 데이터를 view에 전달 및 출력 함수 실행
-* `callUpdateLocation`: 난수 생성 후 업데이트 조건 만족시 model의 update 불러오기
+* `callUpdateLocation`: 난수 생성 후 업데이트 조건 만족시 model의 updateLocation 불러오기
 * `callIsWinCheck`: model 위치를 가져와 승리 판별 후, 승리 조건 만족시 model-isWinCheck 불러오기
 * `endOfGame`: 현재 턴의 횟수를 확인 후, 끝났으면 View의 carIsWin이 true인 것들을 가져와서 printWin 실행
 
-#### Car-Validate
-* `nameInputValidate`: 잘못되지 않음을 구분(true/false)
-* `commaValidate`: 쉼표로 구분이 가능한지(true/false)
-* `nameValidate`: 이름이 5글자 이하인지(true/false)
-* `errorCheck`: 어떤 에러인지 확인하고 반환하기, Car-view의 printError 실행하기
+### User
+
+#### User-Model
+* 변수: inputName, inputNumber
+* `inputNameIO`: inputName에 string으로 값을 넣음
+* `inputNumberIO`: inputNumber에 Number로 값을 넣음
+
+#### User-View
+* `printError`: 에러 출력
+
+#### User-Controller
+* `seperateName`: inputName을 ,으로 나누고, validate 진행, 반환
+
+#### User-Validate
+* `nameInputValidate`: 잘못되지 않음을 구분(success: true/false, errorcode: 100/101)
+* `commaValidate`: 쉼표로 구분이 가능한지(success: true/false, errorcode: 200/301)
+* `nameValidate`: 이름이 5글자 이하인지(success: true/false, errorcode: 300/301)
+* `errorCheck`: 어떤 에러인지 확인하고 value 반환
