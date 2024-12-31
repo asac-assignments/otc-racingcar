@@ -1,7 +1,8 @@
 import InputHandler from "./InputHandler.js"
 class App {
   async play() {
-    InputHandler.getCarNames()
+    await InputHandler.getCarNames()
+    await InputHandler.getMoveCount()
   }
 }
 

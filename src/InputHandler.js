@@ -24,9 +24,20 @@ class InputHandler {
                 .map((element)=>element.trim())
    
     this.#carNames = names
+
    }catch(error){
     //reject되는 경우
    }
+  }
+  static async getMoveCount(){
+    try{
+        const userInput = await Console.readLineAsync("시도할 횟수는 몇 회인가요?\n")
+        const moveCount = parseInt(userInput, 10)
+        this.#moveCount = moveCount
+
+    }catch(e){
+        //reject되는 경우
+    }
   }
 
 
