@@ -84,7 +84,8 @@ jun : -----
 * `printError`: 에러 출력
 
 #### User-Controller
-* `seperateName`: inputName을 ,으로 나누고 validate 진행 후 나눠진 결과값 배열로 반환
+* `seperateName`: inputName을 ,으로 나누고 validate 진행 후 나눠진 결과값 배열 Model에 전달
+* `throwError`: 예외처리 던지기 로직, 예외 조건 만족시 View에 전달
 
 #### User-Validate
 * `nameInputValidate`: 잘못되지 않음을 구분(success: true/false, errorcode: 100/101)
