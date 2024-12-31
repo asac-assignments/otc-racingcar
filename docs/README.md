@@ -57,16 +57,24 @@ jun : -----
 ### Car
 
 #### Car-Model
-* 변수: carName, carLocation, carIsWin
+* 변수: carName, carLocation = 0, carIsWin = false
 * `updateLocation`: carLocation + 1 저장
 * `isWinCheck`: carIsWin에 true/false 저장
 
 #### Car-View
-* `printLocation`: 콘솔에 지속적인 출력 - carName : carLocation * '-'
-* `printWin`: 경주 끝날시 결과 출력
+* `printLocation`: 출력 - 'carName : carLocation * '-' '
+* `printWin`: 결과 출력
+* `printError`: 에러 출력
 
 #### Car-Controller
 * `create`: Constructor를 통한 이름: ${사용자입력}, 위치: 0
-* `read`: model의 데이터를 view에 전달
+* `read`: model의 데이터를 view에 전달 및 출력 함수 실행
 * `callUpdateLocation`: 난수 생성 후 업데이트 조건 만족시 model의 update 불러오기
 * `callIsWinCheck`: model 위치를 가져와 승리 판별 후, 승리 조건 만족시 model-isWinCheck 불러오기
+* `endOfGame`: 현재 턴의 횟수를 확인 후, 끝났으면 View의 carIsWin이 true인 것들을 가져와서 printWin 실행
+
+#### Car-Validate
+* `nameInputValidate`: 잘못되지 않음을 구분(true/false)
+* `commaValidate`: 쉼표로 구분이 가능한지(true/false)
+* `nameValidate`: 이름이 5글자 이하인지(true/false)
+* `errorCheck`: 어떤 에러인지 확인하고 반환하기, Car-view의 printError 실행하기
