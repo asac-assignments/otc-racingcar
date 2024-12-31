@@ -11,6 +11,10 @@ class ValidateInput {
     }
 		return cars;
   }
+
+	validationMathNum(num) {
+		return num;
+	}
 }
 
 export default ValidateInput;

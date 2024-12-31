@@ -27,6 +27,10 @@ class RacingCar {
 		return this.#mov_distance.length;
 	}
 
+	name() {
+		return this.#name;
+	}
+
 }
 
 // console.log(MissionUtils.Random.pickNumberInList([1, 9]));
