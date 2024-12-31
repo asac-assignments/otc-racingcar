@@ -75,15 +75,16 @@ jun : -----
 ### User
 
 #### User-Model
-* 변수: inputName, inputNumber
+* 변수: inputName, inputNumber, seperatedName
 * `inputNameIO`: inputName에 string으로 값을 넣음
 * `inputNumberIO`: inputNumber에 Number로 값을 넣음
+* `inputseperatedName`: 나눠진 결과값 seperatedName에 저장
 
 #### User-View
 * `printError`: 에러 출력
 
 #### User-Controller
-* `seperateName`: inputName을 ,으로 나누고, validate 진행, 반환
+* `seperateName`: inputName을 ,으로 나누고 validate 진행 후 나눠진 결과값 배열로 반환
 
 #### User-Validate
 * `nameInputValidate`: 잘못되지 않음을 구분(success: true/false, errorcode: 100/101)
