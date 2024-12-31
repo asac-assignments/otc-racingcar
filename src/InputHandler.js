@@ -18,14 +18,17 @@ class InputHandler {
   }
 
   static async getCarNames(){
-   const userInput = await Console.readLineAsync("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)")
-   const names = userInput.split(",")
+   try{
+    const userInput = await Console.readLineAsync("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n")
+    const names = userInput.split(",")
                 .map((element)=>element.trim())
    
     this.#carNames = names
-
-
+   }catch(error){
+    //reject되는 경우
+   }
   }
+
 
 }
 export default InputHandler
