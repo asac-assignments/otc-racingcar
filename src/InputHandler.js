@@ -1,13 +1,16 @@
 import {Console, Random} from "@woowacourse/mission-utils";
+import InputValidator from "./InputValidator.js";
+
 class InputHandler {
-  static #carNames = null;
-  static #moveCount = null;
+  static #carNames = [];
+  static #moveCount = 0;
 
   static get carNames() {
     return this.#carNames;
   }
   static set carNames(carNames){
     this.#carNames = carNames
+   
   }
 
   static get moveCount () {
@@ -18,26 +21,22 @@ class InputHandler {
   }
 
   static async getCarNames(){
-   try{
+
     const userInput = await Console.readLineAsync("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n")
     const names = userInput.split(",")
                 .map((element)=>element.trim())
-   
+    InputValidator.validateCarNames(names)
     this.#carNames = names
 
-   }catch(error){
-    //reject되는 경우
-   }
+
   }
   static async getMoveCount(){
-    try{
+  
         const userInput = await Console.readLineAsync("시도할 횟수는 몇 회인가요?\n")
         const moveCount = parseInt(userInput, 10)
+        InputValidator.validateMoveCount(moveCount)
         this.#moveCount = moveCount
 
-    }catch(e){
-        //reject되는 경우
-    }
   }
 
 
