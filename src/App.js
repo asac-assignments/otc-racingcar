@@ -1,4 +1,3 @@
-import {Console, Random} from "@woowacourse/mission-utils";
 import InputHandler from "./InputHandler.js"
 class App {
   async play() {
