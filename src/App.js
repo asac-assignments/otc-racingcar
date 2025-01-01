@@ -1,4 +1,4 @@
-import InputHandler from "./InputHandler.js"
+import InputHandler from "./controller/InputHandler.js"
 class App {
   async play() {
     try{

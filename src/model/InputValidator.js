@@ -23,8 +23,7 @@ class InputValidator {
     return carNames.length < 2 && carNames.includes("");
   }
   static checkCarNamesHasElement(carNames) {
-    this.hasOnlyOneEmptyCarName(carNames) &&
-      this.throwError(this.ERROR_MESSAGES.EMPTY_CAR_NAMES);
+    this.hasOnlyOneEmptyCarName(carNames) && this.throwError(this.ERROR_MESSAGES.EMPTY_CAR_NAMES);
   }
 
   static validateCarNamesAreNotEmpty(carNames) {
