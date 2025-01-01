@@ -13,7 +13,7 @@ class DisplayResult{
 
     }
     static displayAllPositions(cars){
-        cars.forEach(this.displayPosition);
+        cars.forEach(car=>this.displayPosition(car));
     }
 
 }
