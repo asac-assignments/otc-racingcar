@@ -20,10 +20,16 @@ class Car{
     set position(position){
         this.#position = position
     }
+
+    moveForward(){
+        this.#position += 1
+    }
+    isAbleToMove(){
+        return MovementCondition.canMove()
+    }
+    
     move(){
-        if(MovementCondition.canMove()){
-            this.#position += 1
-        }
+        this.isAbleToMove && this.moveForward()
     }
 
 
