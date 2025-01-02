@@ -1,5 +1,5 @@
 import GameSystemMessage from "./GameSystemMessage.js";
-//if문을 통해 상위로 error를 전달
+// model - excetion 처리
 class Validator {
   parseCarNames(names) {
     return names.split(",").map((name) => this.#validateCarName(name));
