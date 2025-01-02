@@ -13,11 +13,7 @@ class RacingCar {
 	}
 
 	move() {
-		const nums = [];
-		for (let i = 0; i < 10; i++) {
-			nums.push(i);
-		}
-		const random_num = MissionUtils.Random.pickNumberInList(nums);
+		const random_num = MissionUtils.Random.pickNumberInRange(0, 9);
 		if (random_num >= 4) {
 			this.#mov_distance += "-";
 		}
