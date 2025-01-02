@@ -67,7 +67,6 @@ class App {
     Console.print(wins);
   }
 
-  
   #getMaxDistance() {
     let num = 0;
     this.#racing_cars.forEach(car => {
