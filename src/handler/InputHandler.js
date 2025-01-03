@@ -10,14 +10,14 @@ class InputHandler {
 
             const tryCount = await MissionUtils.Console.readLineAsync("시도할 횟수는 몇 회인가요?\n")
             Validation.validationTryCount(tryCount)
-            
+
             return {
                 carNames: carNamesArray,
                 tryCount: parseInt(tryCount)
             }
         } catch(error) {
             MissionUtils.Console.print(error.message)
-            process.exit(1)
+            throw error
         }
     }
 }

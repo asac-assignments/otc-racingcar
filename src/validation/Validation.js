@@ -9,7 +9,8 @@ class Validation {
     }
 
     static validationTryCount(tryCount){
-        if(isNaN(tryCount)) {
+        const count = parseInt(tryCount)
+        if(isNaN(count)) {
             throw new Error('[ERROR] 시도 횟수가 잘못된 형식입니다.')
         }
     }
