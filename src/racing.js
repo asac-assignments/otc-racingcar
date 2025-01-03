@@ -12,9 +12,11 @@ class Racing {
             // 자동차 이름 입력받기
             const inputName = await view.inputNameIO();
 
+            // Validate 인스턴스 생성
+            const validator = new Validate();
+
             //  Validate (이름)
-            const nameValidator = new Validate();
-            const nameResult = nameValidator.validateAndSliceName(inputName);
+            const nameResult = validator.validateAndSliceName(inputName);
             if (!nameResult.success) {
                 // 유효성 검사 실패
                 view.printError(
@@ -32,8 +34,7 @@ class Racing {
             const inputTurn = await view.carTurnInput();
 
             // Validate (숫자)
-            const turnValidator = new Validate();
-            const turnResult = turnValidator.isNum(inputTurn);
+            const turnResult = validator.isNum(inputTurn);
             if (!turnResult.success) {
                 view.printError(
                     CarService.getErrorMessage(turnResult.errorCode)
