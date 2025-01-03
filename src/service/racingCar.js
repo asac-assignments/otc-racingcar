@@ -29,7 +29,6 @@ class RacingCar {
         const winners = this.cars.filter(car => car.position === maxPosition)
         return winners.map(car => car.name).join(', ')
     }
-
 }
 
 export default RacingCar
