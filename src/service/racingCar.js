@@ -17,6 +17,19 @@ class RacingCar {
         })
     }
 
+    printRaceResult() {
+        this.cars.forEach(car => {
+            const raceResultBar = '-'.repeat(car.position)
+            MissionUtils.Console.print(`${car.name} : ${raceResultBar}`)
+        })
+    }
+
+    getWinners() {
+        const maxPosition = Math.max(...this.cars.map(car => car.position))
+        const winners = this.cars.filter(car => car.position === maxPosition)
+        return winners.map(car => car.name).join(', ')
+    }
+
 }
 
 export default RacingCar
