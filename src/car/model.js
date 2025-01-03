@@ -1,26 +1,26 @@
 class CarModel {
     #carName;
-    #carLocation= 0;
-    #carWin= false;
+    #carLocation = 0;
+    #carWin = false;
 
-    constructor(name){
-        this.#carName=name;
+    constructor(name) {
+        this.#carName = name;
     }
 
     setcarName(name) {
-        this.#carName= name;
+        this.#carName = name;
     }
 
     getcarName() {
         return this.#carName;
     }
 
-    getcatLocation() {
+    getcarLocation() {
         return this.#carLocation;
     }
 
     setcarLocation(num) {
-        this.#carLocation= num;
+        this.#carLocation = num;
     }
 
     getcarWin() {
@@ -28,11 +28,17 @@ class CarModel {
     }
 
     setcarWin(isWin) {
-        this.#carWin= isWin;
+        this.#carWin = isWin;
     }
 
-    updateLocation(num) {
-        this.setcarLocation(this.getcatLocation() + num);
+    updateLocation() {
+        this.#carLocation += 1;
+    }
+
+    isWinCheck(maxLocation) {
+        if (this.#carLocation === maxLocation) {
+            this.#carWin = true;
+        }
     }
 
     getCarInfo() {
