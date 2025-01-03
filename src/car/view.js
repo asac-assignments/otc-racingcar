@@ -25,7 +25,6 @@ class View {
 
     printWinners(winners) {
         Console.print(`최종 우승자: ${winners.join(", ")}`);
-        Console.close();
     }
 }
 
