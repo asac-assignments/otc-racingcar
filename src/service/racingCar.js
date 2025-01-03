@@ -26,8 +26,12 @@ class RacingCar {
 
     getWinners() {
         const maxPosition = Math.max(...this.cars.map(car => car.position))
-        const winners = this.cars.filter(car => car.position === maxPosition)
-        return winners.map(car => car.name).join(', ')
+        if (maxPosition == 0) {
+            return '없습니다.'
+        } else {
+            const winners = this.cars.filter(car => car.position === maxPosition)
+            return winners.map(car => car.name).join(', ')
+        }
     }
 }
 
