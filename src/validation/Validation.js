@@ -7,6 +7,12 @@ class Validation {
             throw new Error('[ERROR] 자동차 이름을 1개 이상 작성해주세요.')
         }
     }
+
+    static validationTryCount(tryCount){
+        if(isNaN(tryCount)) {
+            throw new Error('[ERROR] 시도 횟수가 잘못된 형식입니다.')
+        }
+    }
 }
 
 export default Validation
