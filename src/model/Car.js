@@ -1,7 +1,8 @@
-import MovementCondition from "./MovementCondition.js";
+import { Random } from "@woowacourse/mission-utils";
 class Car{
-    #name
-    #position
+    #name; 
+    #position; 
+
 
     constructor(name){
         this.#name = name;
@@ -25,11 +26,13 @@ class Car{
         this.#position += 1
     }
     isAbleToMove(){
-        return MovementCondition.canMove()
+        const randomNumber = Random.pickNumberInRange(0, 9)
+        const willMove = randomNumber >= 4
+        return willMove
     }
     
     move(){
-        this.isAbleToMove && this.moveForward()
+        this.isAbleToMove() && this.moveForward()
     }
 
 

@@ -1,14 +1,20 @@
-import InputHandler from "./controller/InputHandler.js"
+import RaceContoller from "./controller/RaceController.js"
 class App {
   async play() {
     try{
-    await InputHandler.getCarNames()
-    await InputHandler.getMoveCount()
+    const raceController = new RaceContoller()
+    await raceController.setCarNames()
+    await raceController.setMoveCount()
+    const result = raceController.playRace()
+    raceController.showResult(result)
+
     }catch(error){
       throw error
       
     }
   }
+
 }
+
 
 export default App;
