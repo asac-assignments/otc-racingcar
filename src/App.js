@@ -1,5 +1,9 @@
+import Racing from "./racing.js";
+
 class App {
-  async play() {}
+    play() {
+        new Racing().play();
+    }
 }
 
 export default App;
