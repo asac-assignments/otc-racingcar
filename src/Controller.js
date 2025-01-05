@@ -1,5 +1,6 @@
 import View from "./View.js";
 import Model from "./Model.js";
+import Exception from "./Exception.js";
 export default class Controller{
     #carList;
     #winner;
