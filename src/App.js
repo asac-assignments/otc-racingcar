@@ -22,6 +22,7 @@ class App {
             OutputView.showWinners(race.getWinners());
         } catch (error) {
             console.error(error.message);
+            throw error;
         }
     }
 }
