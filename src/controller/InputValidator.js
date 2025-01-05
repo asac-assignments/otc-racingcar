@@ -20,7 +20,7 @@ class InputValidator {
     this.checkCarNamesHasElement(carNames);
     this.validateCarNamesAreNotEmpty(carNames);
     this.verifyCarNamesLength(carNames);
-    this.verifyNamesAreUnique(carNames);
+    this.validateNamesAreUnique(carNames)
   }
   hasOnlyOneEmptyCarName(carNames) {
     return carNames.length < 2 && carNames.includes("");
@@ -44,6 +44,9 @@ class InputValidator {
   verifyNamesAreUnique(carNames) {
     const noDuplicates = new Set(carNames);
     return noDuplicates.size !== carNames.length;
+  }
+  validateNamesAreUnique(carNames){
+    this.verifyNamesAreUnique(carNames) && this.throwError(this.ERROR_MESSAGES.DUPLICATE_NAMES)
   }
   DuplicateCarNameError(carNames) {
     this.hasDupllicateCarNames(carNames) && this.throwError(this.ERROR_MESSAGES.DUPLICATE_NAMES);
