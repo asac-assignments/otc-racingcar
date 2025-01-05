@@ -7,7 +7,7 @@ class InputValidator {
       EMPTY_NAME: "빈 이름이 없어야 합니다.",
       CAR_NAME_LENGTH: `자동차 이름은 ${this.CAR_NAME_MAX_LENGTH}자 이하여야 합니다.`,
       DUPLICATE_NAMES: "자동차 이름은 중복될 수 없습니다.",
-      INVALID_MOVE_COUNT: "시도할 횟수는 1이상의 숫자여야 합니다.",
+      INVALID_MOVE_COUNT: "이동할 횟수는 1이상의 숫자여야 합니다.",
     };
 
   }

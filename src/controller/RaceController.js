@@ -8,7 +8,7 @@ class RaceController {
   constructor() {
     this.inputView = new InputView();
     this.inputValidator = new InputValidator();
-    this.raceService = new RaceService();
+    this.raceService = null;
     this.resultView = new ResultView();
     this.moveCount = 0
   }
